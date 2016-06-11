@@ -22,4 +22,18 @@
  */
 module.exports = ( input ) => {
 
+  var parStack = [];
+
+  for (var i = 0; i < input.length; i++) {
+    if (input[i] === '(') {
+      parStack.push(input[i]);
+    } else if (input[i] === ')') {
+      if (parStack.pop() !== '(') {
+        return false;
+      }
+    }
+  };
+
+  return !parStack.length;
+
 };
