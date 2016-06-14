@@ -17,8 +17,8 @@
 module.exports = ( input, test, result ) => {
   var result = result || [];
 
-  if(Array.isArray(input)) {
-    for(var i = 0; i < input.length; i++) {
+  if (Array.isArray(input)) {
+    for (var i = 0; i < input.length; i++) {
       module.exports(input[i], test, result);
     }
   } else if (typeof input === 'object') {
@@ -26,7 +26,7 @@ module.exports = ( input, test, result ) => {
       module.exports(input[key], test, result);
     }
   } else if (typeof input === 'string') {
-    if(test(input)) {
+    if (test(input)) {
       result.push(input);
     }
   }
