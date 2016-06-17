@@ -17,3 +17,22 @@ test( 'BALANCED PARENTHESES: returns true for balanced string', t => {
     t.equal( result, true, 'result is correct' );
     t.end();
 } );
+
+test( 'BALANCED PARENTHESES: returns false for an empty string', t => {
+    const input = '';
+    const result = fpt.balancedParentheses( input );
+
+
+    t.equal( typeof result, 'boolean', 'generated a boolean result' );
+    t.equal( result, false, 'result is correct' );
+    t.end();
+} );
+
+test( 'BALANCED PARENTHESES: returns false for an incorrect string', t => {
+    const input = 'foo bar baz';
+    const result = fpt.balancedParentheses( input );
+
+    t.equal( typeof result, 'boolean', 'generated a boolean result' );
+    t.equal( result, false, 'result is correct' );
+    t.end();
+} );
